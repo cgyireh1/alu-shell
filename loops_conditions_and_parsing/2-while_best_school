@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #Write a Bash script that displays Best School 10 times. using loop
 i=0;
-while [ $i -ge 11 ]; do
+while [ $i -le 9 ]; do
 	echo "Best School";
 	((i++))
 done
