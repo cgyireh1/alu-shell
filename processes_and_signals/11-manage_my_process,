@@ -11,9 +11,9 @@ then
      pkill -f ./manage_my_process
      rm /var/run/my_process.pid
      sudo  -b ./manage_my_process
-     pgrep -if ./manage_my_process | cut -d " " -f 1 > /var/run/my_process.pid
+     pgrep -lf ./manage_my_process | cut -d " " -f 1 > /var/run/my_process.pid
      echo "manage_my_process restarted"
 else
      echo  "Usage: manage_my_process {start|stop|restart}"
-fi
+if
 
