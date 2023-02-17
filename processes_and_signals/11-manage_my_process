@@ -5,14 +5,14 @@ if [ "$1" = start ]
 then
     sudo -b ./manage_my_process
     pgrep -if  ./manage_my_process | grep sudo |cut -d " " -f 1 > /var/run/my_process.pid
-    6echo "manage_my_process started"
-elif ["$1" = stop ]
+    echo "manage_my_process started"
+elif [ "$1" = stop ]
 then
      pkill -f ./manage_my_process
      rm /var/run/my_process.pid
      sudo  -b ./manage_my_process
      pgrep -lf ./manage_my_process | cut -d " " -f 1 > /var/run/my_process.pid
-     echo "manage_my_process restarted"
+     echo "manage_my_process stopped"
 else
      echo  "Usage: manage_my_process {start|stop|restart}"
 fi
